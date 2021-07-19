@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+header, .hello, .skills {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 60px;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.line {
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.point {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.point:after {
+  content: ".";
+  color: #2b884d;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  background-color: #fff;
+}
+
+header .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .nav li {
+  border-bottom: 1px solid transparent;
+  margin-right: 40px;
+}
+
+header .nav li:last-child {
+  margin-right: 100px;
+}
+
+header .nav li:hover {
+  border-bottom: 1px solid #2b884d;
+}
+
+.hello {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 60px;
+}
+
+.hello .picture {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.hello .picture img {
+  height: 400px;
+}
+
+.description {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  margin-right: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.description .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.description .info .names {
+  font-weight: 500;
+}
+
+.description .info .names li {
+  line-height: 35px;
+}
+
+.description .info .values li {
+  line-height: 35px;
+  cursor: pointer;
+}
+
+.description .info .values .socials img {
+  width: 20px;
+  margin-right: 15px;
+}
+/*# sourceMappingURL=style.css.map */
