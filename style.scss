@@ -5,7 +5,7 @@ $main-color: #2b884d;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 20px 60px;
+    padding: 30px 60px 20px 60px;
 }
 %flex-vertical-stretch {
     display: flex;
@@ -18,7 +18,7 @@ $main-color: #2b884d;
     box-sizing: border-box;
 }
 
-body {
+body, p {
     margin: 0;
 }
 
@@ -29,10 +29,6 @@ ul {
 a {
     text-decoration: none;
     color: black;
-}
-
-h2 {
-    margin: 15px 0 0 0;
 }
 
 .line {
@@ -50,6 +46,7 @@ h2 {
 
 .mark {
     width: 150px;
+    margin-top: 40px;
 }
 
 .header {
@@ -130,6 +127,7 @@ header {
 .skills {
     @extend %content;
     display: flex;
+    justify-content: space-between;
     div {
         flex: 1;
         &:first-child {
@@ -152,6 +150,7 @@ header {
         flex: 2;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
 
         div {
             max-width: 340px;

@@ -3,7 +3,7 @@ header, .hello, .skills, .education, .portfolio {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 20px 60px;
+  padding: 30px 60px 20px 60px;
 }
 
 .skills div:first-child, .education div:first-child {
@@ -25,7 +25,7 @@ header, .hello, .skills, .education, .portfolio {
           box-sizing: border-box;
 }
 
-body {
+body, p {
   margin: 0;
 }
 
@@ -36,10 +36,6 @@ ul {
 a {
   text-decoration: none;
   color: black;
-}
-
-h2 {
-  margin: 15px 0 0 0;
 }
 
 .line {
@@ -58,6 +54,7 @@ h2 {
 
 .mark {
   width: 150px;
+  margin-top: 40px;
 }
 
 .header {
@@ -168,6 +165,9 @@ header .nav li a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .skills div {
@@ -202,6 +202,9 @@ header .nav li a:hover {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .education .establishments div {
