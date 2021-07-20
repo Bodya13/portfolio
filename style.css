@@ -1,9 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
-header, .hello, .skills {
+header, .hello, .skills, .education, .portfolio {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px 60px;
+}
+
+.skills div:first-child, .education div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 * {
@@ -25,6 +38,10 @@ a {
   color: black;
 }
 
+h2 {
+  margin: 15px 0 0 0;
+}
+
 .line {
   border-bottom: 1px solid #c9c9c9;
 }
@@ -37,6 +54,10 @@ a {
 .point:after {
   content: ".";
   color: #2b884d;
+}
+
+.mark {
+  width: 150px;
 }
 
 .header {
@@ -74,8 +95,11 @@ header .nav li:last-child {
   margin-right: 100px;
 }
 
-header .nav li:hover {
+header .nav li a:hover {
   border-bottom: 1px solid #2b884d;
+  color: #2b884d;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 .hello {
@@ -133,11 +157,63 @@ header .nav li:hover {
 
 .description .info .values li {
   line-height: 35px;
-  cursor: pointer;
 }
 
 .description .info .values .socials img {
   width: 20px;
   margin-right: 15px;
+}
+
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.skills div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.skills div:first-child {
+  margin-right: 100px;
+}
+
+.education {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.education div:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 100px;
+}
+
+.education .establishments {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.education .establishments div {
+  max-width: 340px;
+  width: 100%;
+}
+
+.education .establishments div:nth-child(2n+1) {
+  margin-right: 20px;
+}
+
+.education .establishments div:nth-child(-n +2) {
+  border-bottom: 1px solid #e2e2e2;
 }
 /*# sourceMappingURL=style.css.map */

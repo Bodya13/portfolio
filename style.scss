@@ -7,6 +7,11 @@ $main-color: #2b884d;
     margin: 0 auto;
     padding: 20px 60px;
 }
+%flex-vertical-stretch {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -26,6 +31,10 @@ a {
     color: black;
 }
 
+h2 {
+    margin: 15px 0 0 0;
+}
+
 .line {
     border-bottom: 1px solid rgb(201, 201, 201);
 }
@@ -37,6 +46,10 @@ a {
         content: ".";
         color: $main-color;
     }
+}
+
+.mark {
+    width: 150px;
 }
 
 .header {
@@ -61,8 +74,10 @@ header {
             &:last-child {
                 margin-right: 100px;
             }
-            &:hover {
+            a:hover {
                 border-bottom: 1px solid $main-color;
+                color: $main-color;
+                transition: all .5s;
             }
         }
     }
@@ -103,7 +118,6 @@ header {
         .values {
             li {
                 line-height: 35px;
-                cursor: pointer;
             }
             .socials img{
                 width: 20px;
@@ -114,5 +128,44 @@ header {
 }
 
 .skills {
+    @extend %content;
+    display: flex;
+    div {
+        flex: 1;
+        &:first-child {
+            margin-right: 100px;
+            @extend %flex-vertical-stretch;
+        }
+    }
+}
+
+.education {
+    @extend %content;
+    display: flex;
+
+    div:first-child {
+        flex: 1;
+        margin-right: 100px;
+        @extend %flex-vertical-stretch;
+    }
+    .establishments {
+        flex: 2;
+        display: flex;
+        flex-wrap: wrap;
+
+        div {
+            max-width: 340px;
+            width: 100%;
+            &:nth-child(2n+1) {
+                margin-right: 20px;
+            }
+            &:nth-child(-n +2) {
+                border-bottom: 1px solid rgb(226, 226, 226);
+            }
+        }
+    }
+}
+
+.portfolio {
     @extend %content;
 }
