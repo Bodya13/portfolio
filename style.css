@@ -236,6 +236,7 @@ header .nav li a:hover {
   margin-right: 30px;
   margin-bottom: 20px;
   border-bottom: 1px solid transparent;
+  cursor: pointer;
 }
 
 .portfolio .filters .filter:hover {
@@ -293,6 +294,10 @@ header .nav li a:hover {
   max-width: 250px;
   border: 1px solid green;
   margin-right: 20px;
+}
+
+.projects .project.hidden {
+  display: none;
 }
 
 .contact {

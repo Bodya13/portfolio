@@ -179,6 +179,7 @@ header {
             margin-right: 30px;
             margin-bottom: 20px;
             border-bottom: 1px solid transparent;
+            cursor: pointer;
             &:hover {
                 border-bottom: 1px solid $main-color;
                 color: $main-color;
@@ -227,6 +228,9 @@ header {
             // &:hover {
             //     background-size: auto;
             // }
+        }
+        &.hidden {
+            display: none
         }
     }
 }
