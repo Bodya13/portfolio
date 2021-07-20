@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
-header, .hello, .skills, .education, .portfolio {
+header, .hello, .skills, .education, .portfolio, .contact {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 30px 60px 20px 60px;
+  padding: 55px 60px 30px 60px;
 }
 
 .skills div:first-child, .education div:first-child {
@@ -25,12 +25,13 @@ header, .hello, .skills, .education, .portfolio {
           box-sizing: border-box;
 }
 
-body, p {
+body, p, h4 {
   margin: 0;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
@@ -49,7 +50,7 @@ a {
 
 .point:after {
   content: ".";
-  color: #2b884d;
+  color: #00a13b;
 }
 
 .mark {
@@ -61,9 +62,11 @@ a {
   position: fixed;
   top: 0;
   width: 100vw;
+  background-color: #fff;
 }
 
 header {
+  padding: 30px 60px 20px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,7 +77,6 @@ header {
       -ms-flex-align: center;
           align-items: center;
   height: 60px;
-  background-color: #fff;
 }
 
 header .nav {
@@ -93,10 +95,10 @@ header .nav li:last-child {
 }
 
 header .nav li a:hover {
-  border-bottom: 1px solid #2b884d;
-  color: #2b884d;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  border-bottom: 1px solid #00a13b;
+  color: #00a13b;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .hello {
@@ -149,11 +151,12 @@ header .nav li a:hover {
 }
 
 .description .info .names li {
-  line-height: 35px;
+  line-height: 40px;
+  margin-right: 50px;
 }
 
 .description .info .values li {
-  line-height: 35px;
+  line-height: 40px;
 }
 
 .description .info .values .socials img {
@@ -218,5 +221,119 @@ header .nav li a:hover {
 
 .education .establishments div:nth-child(-n +2) {
   border-bottom: 1px solid #e2e2e2;
+}
+
+.portfolio .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.portfolio .filters .filter {
+  margin-right: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid transparent;
+}
+
+.portfolio .filters .filter:hover {
+  border-bottom: 1px solid #00a13b;
+  color: #00a13b;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.portfolio .filters .filter.active {
+  color: #00a13b;
+}
+
+.projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 100px;
+}
+
+.projects .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30%;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+
+.projects .project a {
+  height: 300px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.projects .project h4 {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.projects .project div {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 250px;
+  max-width: 250px;
+  border: 1px solid green;
+  margin-right: 20px;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact div:first-child {
+  margin-right: 100px;
+}
+
+.contact .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.contact .info .names {
+  font-weight: 500;
+}
+
+.contact .info .names li {
+  line-height: 40px;
+  margin-right: 50px;
+}
+
+.contact .info .values li {
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.copyright {
+  background-color: #c9c9c9;
+  height: 40px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: .8rem;
+  color: gray;
 }
 /*# sourceMappingURL=style.css.map */

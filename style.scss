@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-$main-color: #2b884d;
+$main-color: #00a13b;
 %content {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 30px 60px 20px 60px;
+    padding: 55px 60px 30px 60px;
 }
 %flex-vertical-stretch {
     display: flex;
@@ -18,12 +18,13 @@ $main-color: #2b884d;
     box-sizing: border-box;
 }
 
-body, p {
+body, p, h4 {
     margin: 0;
 }
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 a {
@@ -52,16 +53,17 @@ a {
 .header {
     position: fixed;
     top: 0;
-    width: 100vw
+    width: 100vw;
+    background-color: #fff;
 }
 
 header {
     @extend %content;
+    padding: 30px 60px 20px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    background-color: #fff;
 
     .nav {
         display: flex;
@@ -74,7 +76,7 @@ header {
             a:hover {
                 border-bottom: 1px solid $main-color;
                 color: $main-color;
-                transition: all .5s;
+                transition: all .3s;
             }
         }
     }
@@ -109,12 +111,13 @@ header {
         .names {
             font-weight: 500;
             li {
-                line-height: 35px;
+                line-height: 40px;
+                margin-right: 50px;
             }
         }
         .values {
             li {
-                line-height: 35px;
+                line-height: 40px;
             }
             .socials img{
                 width: 20px;
@@ -167,4 +170,100 @@ header {
 
 .portfolio {
     @extend %content;
+
+    .filters {
+        display: flex;
+        justify-content: center;
+
+        .filter {
+            margin-right: 30px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid transparent;
+            &:hover {
+                border-bottom: 1px solid $main-color;
+                color: $main-color;
+                transition: all .3s;
+            }
+            &.active {
+                color: $main-color;
+            }
+        }
+    }
+}
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 100px;
+
+    .project{
+        display: flex;
+        justify-content: center;
+        width: 30%;
+        margin-right: 15px;
+        margin-bottom: 20px;
+
+        a {
+            height: 300px;
+            max-width: 250px;
+            width: 100%;
+        }
+
+        h4 {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        div {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100%;
+            height: 250px;
+            max-width: 250px;
+            border: 1px solid green;
+            margin-right: 20px;
+            // &:hover {
+            //     background-size: auto;
+            // }
+        }
+    }
+}
+
+.contact {
+    @extend %content;
+    display: flex;
+
+    div:first-child {
+        margin-right: 100px;
+    }
+
+    .info {
+        display: flex;
+        justify-content: flex-start;
+
+        .names {
+            font-weight: 500;
+            li {
+                line-height: 40px;
+                margin-right: 50px;
+            }
+        }
+        .values {
+            li {
+                line-height: 40px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.copyright {
+    background-color: rgb(201, 201, 201);
+    height: 40px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: .8rem;
+    color: gray;
 }
