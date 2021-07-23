@@ -1,0 +1,46 @@
+@media all and (max-width: 1150px) {
+    .container div {
+        height: 200px !important;
+    }
+}
+
+@media all and (max-width: 975px) {
+    .projects {
+        padding: 0 50px !important;
+        .project {
+            width: 45%;
+        }
+    }
+
+    .nav {
+        display: none !important;
+    }
+    .nav-menu {
+        display: block !important;
+    }
+}
+
+@media all and (max-width: 735px) {
+    .hello {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media all and (max-width: 675px) {
+    .projects {
+        padding: 0 20px !important;
+        .container div {
+            height: 170px !important;
+        }
+    }
+}
+
+@media all and (max-width: 575px) {
+    .project {
+        width: 90% !important;
+        .container div {
+            height: 200px !important;
+        }
+    }
+}
