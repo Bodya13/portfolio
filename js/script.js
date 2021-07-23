@@ -1,30 +1,25 @@
 let filters = document.querySelectorAll('.filter');
-let projects = document.querySelectorAll('.project');
+let projects = Array.from(document.querySelectorAll('.project'));
 
 filters.forEach(filter => {
     filter.addEventListener('click', () => {
         filters.forEach(e => {
             e.classList.remove('active');
         })
-        if (filter.getAttribute('data-sign') === 'all') {
-            filter.classList.add('active');
-            projects.forEach(project => {
+        filter.classList.add('active')
+        if (filter.dataset.sign === 'all') {
+            projects.forEach (project => {
                 project.classList.remove('hidden');
             })
-        } else if (filter.getAttribute('data-sign') === 'sites') {
-            filter.classList.add('active');
-            projects.forEach(project => {
-                if (project.getAttribute('data-name') === 'web-site') {
+        } else {
+            projects.forEach (project => {
+                console.log(project.dataset.sign);
+                if (filter.dataset.sign ===  project.dataset.sign) {
                     project.classList.remove('hidden');
                 } else project.classList.add('hidden');
+                
             })
-        } else if (filter.getAttribute('data-sign') === 'js') {
-            filter.classList.add('active');
-            projects.forEach(project => {
-                if (project.getAttribute('data-name') === 'web-site') {
-                    project.classList.add('hidden');
-                } else project.classList.remove('hidden');
-            })
+    
         }
     })
 })
@@ -62,9 +57,36 @@ nav.addEventListener('click', event => {
 // }
 
 
+
 let sections = document.querySelectorAll('.section');
 let navli = nav.querySelectorAll('li');
+let header = document.querySelector('.header')
 
 window.addEventListener('scroll', function() {
-    console.log(window.pageYOffset);
+    if (window.pageYOffset === 0) {
+        header.classList.remove('active-header')
+        navli.forEach (e => {
+            e.classList.remove('active')
+        })
+        navli[0].classList.add('active')
+    } else { 
+        header.classList.add('active-header')
+        if (0 > (document.documentElement.scrollHeight - document.documentElement.clientHeight - window.pageYOffset)) {
+            navli.forEach (e => {
+                e.classList.remove('active')
+            })
+            navli[4].classList.add('active')
+        }
+        else {
+            for (let i = 1; i < sections.length - 1; i++) {
+                if (window.pageYOffset > (sections[i].offsetTop - 2*sections[i-1].offsetHeight/3)) {
+                    navli.forEach (e => {
+                        if (e.dataset.value === sections[i].id) {
+                            e.classList.add('active')
+                        } else e.classList.remove('active')
+                    })
+                }
+            }
+        }
+    }
 });

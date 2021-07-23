@@ -54,6 +54,11 @@ a {
     color: $main-color;
 }
 
+.active-header {
+    box-shadow: 0 5px 10px rgba(37, 37, 37, .1);
+    border-bottom-color: transparent;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -208,14 +213,12 @@ header {
         width: 30%;
         margin-right: 15px;
         margin-bottom: 20px;
+        // transition: all .5s ease-in-out;
 
         a:first-child {
             max-width: 250px;
             width: 100%;
             &:hover {
-                .container {
-                    overflow: hidden;
-                }
                 .container div {
                     transform: scale(1.2);
                     transition: all .4s ease-in-out;
@@ -231,6 +234,10 @@ header {
             text-align: center;
         }
 
+        .container {
+            overflow: hidden;
+        }
+
         .container div {
             background-size: cover;
             background-repeat: no-repeat;
@@ -240,10 +247,11 @@ header {
             max-width: 250px;
             border: 1px solid $main-color;
             margin-right: 20px;
+            transition: all .5s;
         }
 
         &.hidden {
-            display: none
+            display: none;
         }
 
         a:last-child {
