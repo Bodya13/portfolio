@@ -67,26 +67,4 @@ let navli = nav.querySelectorAll('li');
 
 window.addEventListener('scroll', function() {
     console.log(window.pageYOffset);
-    for (let i = 0; i < sections.length; i++){
-
-
-        if (i < 4) {
-            if(window.pageYOffset >= sections[i].offsetTop && window.pageYOffset <= sections[i+1].offsetTop) {
-                navli.forEach(e => {
-                    if (e.dataset.value === sections[i].id) {
-                        e.classList.add('active')
-                    } else e.classList.remove('active')
-                })
-            }
-        }
-        else {
-            if (window.pageYOffset > (sections[i].offsetTop - ((sections[i-1].offsetTop - sections[i-2].offsetTop)/2))) {
-                navli.forEach(e => {
-                    if (e.dataset.value === sections[i].id) {
-                        e.classList.add('active')
-                    } else e.classList.remove('active')
-                })
-            }
-        }  
-    }
 });
