@@ -13,7 +13,6 @@ filters.forEach(filter => {
             })
         } else {
             projects.forEach (project => {
-                console.log(project.dataset.sign);
                 if (filter.dataset.sign ===  project.dataset.sign) {
                     project.classList.remove('hidden');
                 } else project.classList.add('hidden');
@@ -33,19 +32,35 @@ fullYear.innerHTML = date.getFullYear()
 
 
 let nav = document.querySelector('.nav');
+let navbar = document.querySelector('.navbar');
+let sidebar = document.querySelector('.sidebar')
+
+function scrollto(event) {
+    if(event.target.dataset.value === undefined){
+        return;
+    } else {
+        let value = event.target.getAttribute('data-value');
+        let positionY = document.querySelector(`#${value}`).offsetTop;
+        window.scrollTo({top: positionY - 60, behavior: "smooth"});
+    }
+}
 
 // let windowPageYOffset = 0;
 
 nav.addEventListener('click', event => {
-    let value = event.target.getAttribute('data-value');
-    let positionY = document.querySelector(`#${value}`).offsetTop;
-
-    window.scrollTo({top: positionY - 60, behavior: "smooth"});
-
+    scrollto(event);
     // windowPageYOffset = window.pageYOffset;
     // if (value != null && windowPageYOffset != document.querySelector(`#${value}`).offsetTop) {
     //     setTimeout(scroll, 50, value);
     // }
+})
+
+navbar.addEventListener('click', event => {
+    scrollto(event);
+
+    if (document.documentElement.clientWidth < 500 && event.target.dataset.value != undefined) {
+        sidebar.classList.toggle('appear')
+    }
 })
 
 // function scroll(value) {
@@ -60,33 +75,50 @@ nav.addEventListener('click', event => {
 
 let sections = document.querySelectorAll('.section');
 let navli = nav.querySelectorAll('li');
+let navbarli = navbar.querySelectorAll('li');
 let header = document.querySelector('.header')
+
+function addANDRemoveClass(array, elem, className) {
+    array.forEach (e => {
+        e.classList.remove(className);
+    })
+    array[elem].classList.add(className)
+}
+
+function addORRemoveClass(array, className, index) {
+    array.forEach (e => {
+        if (e.dataset.value === sections[index].id) {
+            e.classList.add(className)
+        } else e.classList.remove(className)
+    })
+}
 
 window.addEventListener('scroll', function() {
     if (window.pageYOffset === 0) {
         header.classList.remove('active-header')
-        navli.forEach (e => {
-            e.classList.remove('active')
-        })
-        navli[0].classList.add('active')
+
+        addANDRemoveClass(navli, 0, 'active');
+        addANDRemoveClass(navbarli, 0, 'activeli');
     } else { 
         header.classList.add('active-header')
-        if (0 > (document.documentElement.scrollHeight - document.documentElement.clientHeight - window.pageYOffset)) {
-            navli.forEach (e => {
-                e.classList.remove('active')
-            })
-            navli[4].classList.add('active')
+        if (20 >= (document.documentElement.scrollHeight - document.documentElement.clientHeight - window.pageYOffset)) {
+            addANDRemoveClass(navli, 4, 'active');
+            addANDRemoveClass(navbarli, 4, 'activeli');
         }
         else {
             for (let i = 1; i < sections.length - 1; i++) {
                 if (window.pageYOffset > (sections[i].offsetTop - 2*sections[i-1].offsetHeight/3)) {
-                    navli.forEach (e => {
-                        if (e.dataset.value === sections[i].id) {
-                            e.classList.add('active')
-                        } else e.classList.remove('active')
-                    })
+                    addORRemoveClass(navli, 'active', i);
+                    addORRemoveClass(navbarli, 'activeli', i);
                 }
             }
         }
     }
 });
+
+
+let navBtn = document.querySelector('.nav-menu')
+
+navBtn.addEventListener ('click', () => {
+    sidebar.classList.toggle('appear')
+})
