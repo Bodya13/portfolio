@@ -69,7 +69,7 @@ a {
 
 header {
     @extend %content;
-    padding: 30px 60px 20px 60px;
+    padding: 20px 30px 20px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,32 +93,44 @@ header {
     }
 }
 
-.sidebar {
-    .nav-menu {
-        display: none;
-        z-index: 10;
-        .part {
-            width: 30px;
-            height: 5px;
-            background-color: rgb(61, 141, 77);
-            border: 1px solid rgb(39, 97, 39);
-            border-radius: 5px;
-            &:nth-child(-n + 2) {
-                margin-bottom: 3px;
-            }
+.nav-menu-open {
+    .part {
+        background-color: rgb(61, 141, 77);
+        border: 1px solid rgb(39, 97, 39);
+    }
+}
+
+.nav-menu-open, .nav-menu-close {
+    display: none;
+    .part {
+        width: 30px;
+        height: 5px;
+        border-radius: 5px;
+        &:nth-child(-n + 2) {
+            margin-bottom: 3px;
         }
     }
+}
 
-    z-index: 7;
+.z-index {
+    z-index: -2;
+    position: fixed;
+    right: 0;
+    transition: z-index .3s .3s;
+    &.changeIndex {
+        transition: z-index 0s 0s;
+        z-index: 10;
+    }
+}
+
+.sidebar {
     display: none;
     flex-direction: column;
     align-items: flex-end;
-    position: fixed;
-    right: 0;
     width: 250px;
     height: 100vh;
     padding: 20px 30px;
-    transition: all .3s ease-in-out;
+    transition: background-color .3s ease-out;
 
     .navbar {
         opacity: 0;
@@ -127,7 +139,7 @@ header {
         align-items: center;
         width: 100%;
         margin-top: 70px;
-        transition: all .3s ease-in-out;
+        transition: opacity .3s ease-out;
         
         li {
             cursor: pointer;
@@ -135,17 +147,14 @@ header {
             margin-bottom: 40px;
             border-bottom: 1px solid transparent;
             padding-bottom: 2px;
-            // &:active {
-            //     color: #0b0b0b;
-            //     border-bottom: 1px solid #0b0b0b;
-            // }
             &.activeli {
                 color: #0b0b0b;
             }
         }
     }
     &.appear {
-        transition: all .3s ease-in-out;
+        z-index: 10;
+        transition: background-color .3s ease-out;
         background-color: rgb(42, 97, 47);
 
         .part {
@@ -154,7 +163,7 @@ header {
         }
         .navbar {
             opacity: 1;
-            transition: all .3s ease-in-out;
+            transition: opacity .3s ease-in-out;
         }
     }
 }

@@ -34,6 +34,7 @@ fullYear.innerHTML = date.getFullYear()
 let nav = document.querySelector('.nav');
 let navbar = document.querySelector('.navbar');
 let sidebar = document.querySelector('.sidebar')
+let zIndex = document.querySelector('.z-index')
 
 function scrollto(event) {
     if(event.target.dataset.value === undefined){
@@ -60,6 +61,7 @@ navbar.addEventListener('click', event => {
 
     if (document.documentElement.clientWidth < 500 && event.target.dataset.value != undefined) {
         sidebar.classList.toggle('appear')
+        zIndex.classList.toggle('changeIndex')
     }
 })
 
@@ -117,8 +119,18 @@ window.addEventListener('scroll', function() {
 });
 
 
-let navBtn = document.querySelector('.nav-menu')
+let navBtnOpen = document.querySelector('.nav-menu-open')
+let navBtnClose = document.querySelector('.nav-menu-close')
 
-navBtn.addEventListener ('click', () => {
-    sidebar.classList.toggle('appear')
+navBtnOpen.addEventListener ('click', () => {
+    sidebar.classList.add('appear')
+    zIndex.classList.add('changeIndex')
 })
+
+navBtnClose.addEventListener ('click', () => {
+    sidebar.classList.remove('appear')
+    zIndex.classList.remove('changeIndex')
+})
+
+// console.log(window.navigator.language);
+// console.log(window.location);
