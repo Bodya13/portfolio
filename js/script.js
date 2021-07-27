@@ -146,7 +146,7 @@ langBtns.addEventListener ('click', event => {
 function langChangeTo (necessaryDictionary) {
     for (const property in necessaryDictionary) {
         Array.from(document.querySelectorAll(`[data-translate = "${property}"]`)).forEach(e => {
-            e.innerHTML = necessaryDictionary[`${property}`];
+            e.innerHTML = necessaryDictionary[property];
         })
     }
 }
