@@ -26,6 +26,12 @@ a {
   color: black;
 }
 
+button {
+  outline: none;
+  background: none;
+  border: none;
+}
+
 .line {
   border-bottom: 1px solid #c9c9c9;
 }
@@ -67,19 +73,25 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   height: 60px;
 }
 
+header .logo {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
 header .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
 }
 
 header .nav li {
@@ -88,15 +100,28 @@ header .nav li {
   cursor: pointer;
 }
 
-header .nav li:last-child {
-  margin-right: 100px;
-}
-
 header .nav li:hover {
   border-bottom: 1px solid #00a13b;
   color: #00a13b;
   -webkit-transition: all .3s;
   transition: all .3s;
+}
+
+header .languages {
+  margin-right: 50px;
+}
+
+header .languages button {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+header .languages button:first-child {
+  border-right: 1px solid gray;
+}
+
+header .languages button.dark {
+  color: gray;
 }
 
 .nav-menu-open .part {
@@ -233,28 +258,30 @@ header .nav li:hover {
 }
 
 .description .info {
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 450px;
 }
 
 .description .info .names {
   font-weight: 500;
+  margin-bottom: 25px;
+  margin-right: 10px;
+  width: 30%;
 }
 
-.description .info .names li {
-  line-height: 40px;
-  margin-right: 50px;
+.description .info .values {
+  width: 65%;
 }
 
-.description .info .values li {
-  line-height: 40px;
-}
-
-.description .info .values .socials img {
+.description .info .socials img {
   width: 20px;
   margin-right: 15px;
 }
@@ -282,6 +309,10 @@ header .nav li:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.skills > div:first-child div h3 {
+  margin: 30px 0 20px 0;
 }
 
 .skills > div:first-child div:first-child {
@@ -468,6 +499,7 @@ header .nav li:hover {
 }
 
 .contact .info {
+  margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -481,12 +513,12 @@ header .nav li:hover {
 }
 
 .contact .info .names li {
-  line-height: 40px;
+  margin-bottom: 20px;
   margin-right: 50px;
 }
 
 .contact .info .values li {
-  line-height: 40px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 

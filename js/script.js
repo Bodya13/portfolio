@@ -1,3 +1,5 @@
+
+
 let filters = document.querySelectorAll('.filter');
 let projects = Array.from(document.querySelectorAll('.project'));
 
@@ -132,5 +134,48 @@ navBtnClose.addEventListener ('click', () => {
     zIndex.classList.remove('changeIndex')
 })
 
-// console.log(window.navigator.language);
-// console.log(window.location);
+
+
+import dictionary from './language.js';
+
+let langBtns = document.querySelector('.languages');
+let alltags = Array.from(document.querySelectorAll('*')); 
+
+console.log(localStorage);
+
+if(localStorage.length != 0) {
+    let userLanguage = localStorage.getItem('myLanguage');
+    langBtns.querySelectorAll('button').forEach (e => {
+        if (e.id === userLanguage) {
+            e.classList.remove('dark')
+        } else e.classList.add('dark')
+    });
+
+    let necessaryDictionary = dictionary[`${userLanguage}`];
+    langChangeTo (necessaryDictionary);
+}
+
+
+langBtns.addEventListener ('click', event => {
+    langBtns.querySelectorAll('button').forEach (e => e.classList.add('dark'));
+    event.target.classList.remove('dark');
+    if (event.target.id === 'EN') {
+        let necessaryDictionary = dictionary.EN;
+        langChangeTo (necessaryDictionary);
+        localStorage.setItem('myLanguage','EN');
+    } else if (event.target.id === 'UA') {
+        let necessaryDictionary = dictionary.UA;
+        langChangeTo (necessaryDictionary);
+        localStorage.setItem('myLanguage','UA');
+    }
+})
+
+function langChangeTo (necessaryDictionary) {
+    for (const property in necessaryDictionary) {
+        alltags.forEach (e => {
+            if (e.getAttribute('data-translate') === `${property}`) {
+                e.innerHTML = necessaryDictionary[`${property}`];
+            };
+        })
+    }
+}

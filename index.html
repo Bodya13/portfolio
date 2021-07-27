@@ -11,14 +11,18 @@
 <body>
     <div class="line header">
         <header>
-            <a href="#"><span class="point">Bohdana</span></a>
+            <a href="#" class="logo"><span class="point">Bohdana</span></a>
             <ul class="nav">
-                <li data-value="hello" class="active">Hello</li>
-                <li data-value="skills">Skills</li>
-                <li data-value="education">Education</li>
-                <li data-value="portfolio">Portfolio</li>
-                <li data-value="contact">Contact Me</li>
+                <li data-value="hello" data-translate="hello" class="active">Hello</li>
+                <li data-value="skills" data-translate="skills">Skills</li>
+                <li data-value="education" data-translate="education">Education</li>
+                <li data-value="portfolio" data-translate="portfolio">Portfolio</li>
+                <li data-value="contact" data-translate="contact">Contact Me</li>
             </ul>
+            <div class="languages">
+                <button id="EN">EN</button>
+                <button id="UA" class="dark">UA</button>
+            </div>
             <div class="nav-menu-open">
                 <div class="part"></div>
                 <div class="part"></div>
@@ -34,34 +38,30 @@
                 <div class="part"></div>
             </div>
             <ul class="navbar">
-                <li data-value="hello" class="activeli">Hello</li>
-                <li data-value="skills">Skills</li>
-                <li data-value="education">Education</li>
-                <li data-value="portfolio">Portfolio</li>
-                <li data-value="contact">Contact Me</li>
+                <li data-value="hello" data-translate="hello" class="activeli">Hello</li>
+                <li data-value="skills" data-translate="skills">Skills</li>
+                <li data-value="education" data-translate="education">Education</li>
+                <li data-value="portfolio" data-translate="portfolio">Portfolio</li>
+                <li data-value="contact" data-translate="contact">Contact Me</li>
             </ul>
         </div>
     </div>
     <div class="line section" id="hello">
         <div class="hello">
             <div class="description">
-                <h2 class="point">I am Bohdana Stetsenko</h2>
-                <p>I am a future Frontend Developer. I am a hardworking, punctual and responsible person. I am looking for a company where I will be able to develop and improve my professional knowledge.</p>
+                <h2 class="point" data-translate="title">I am Bohdana Stetsenko</h2>
+                <p data-translate="subtitle">I am a future Frontend Developer. I am a hardworking, punctual and responsible person. I am looking for a company where I will be able to develop and improve my professional knowledge.</p>
                 <div class="info">
-                    <ul class="names">
-                        <li>Phone</li>
-                        <li>Email</li>
-                        <li>Social</li>
-                    </ul>
-                    <ul class="values">
-                        <li>+38 (066) 40-36-411</li>
-                        <li>stetsenkobohdana@gmail.com</li>
-                        <li class="socials">
-                            <a href="https://instagram.com/bo_stetsenko?utm_medium=copy_link" class="instagram" target="_blank"><img src="img/instagram.png" alt=""></a>
-                            <a href="https://www.facebook.com/stetsenkobohdana" class="facebook" target="_blank"><img src="img/facebook.png" alt=""></a>
-                            <a href="https://t.me/bodya_13b" class="telegram" target="_blank"><img src="img/telegram.png" alt=""></a>
-                        </li>
-                    </ul>
+                    <div data-translate="phone" class="names">Phone</div>
+                    <div class="values">+38 (066) 40-36-411</div>
+                    <div data-translate="email" class="names">Email</div>
+                    <div class="values">stetsenkobohdana@gmail.com</div>
+                    <div data-translate="social" class="names">Social</div>
+                    <div class="socials values">
+                        <a href="https://instagram.com/bo_stetsenko?utm_medium=copy_link" class="instagram" target="_blank"><img src="img/instagram.png" alt=""></a>
+                        <a href="https://www.facebook.com/stetsenkobohdana" class="facebook" target="_blank"><img src="img/facebook.png" alt=""></a>
+                        <a href="https://t.me/bodya_13b" class="telegram" target="_blank"><img src="img/telegram.png" alt=""></a>
+                    </div>
                 </div>
             </div>
             <div class="picture">
@@ -73,16 +73,16 @@
         <div class="skills">
             <div>
                 <div>
-                    <h2 class="point">Skills</h2>
-                    <p>I am inspired by creating great work with people who are as passionate as I am about building something awesome.</p>
+                    <h2 class="point" data-translate="skills">Skills</h2>
+                    <p data-translate="skillsParagraph">I am inspired by creating great work with people who are as passionate as I am about building something awesome.</p>
                 </div>
                 <div>
-                    <h3>Frontend Development</h3>
-                    <p>fluent knowledge of JavaScript, HTML, CSS, SASS/SCSS; Git; adaptive and responsive layout</p>
+                    <h3 data-translate="skillsFirstTitle">Frontend Development</h3>
+                    <p data-translate="skillsFirstTitleParagraph">Fluent knowledge of JavaScript, HTML, CSS, SASS/SCSS; Git; adaptive and responsive layout</p>
                 </div>
                 <div>
-                    <h3>Other</h3>
-                    <p>Intermediate level of English, experience working in a team environment, good eye for quality design and aesthetics</p>
+                    <h3 data-translate="skillsSecondTitle">Other</h3>
+                    <p data-translate="skillsSecondTitleParagraph">Intermediate level of English, experience working in a team environment, good eye for quality design and aesthetics</p>
                 </div>
             </div>
             <img class="mark" src="img/line.png" alt="">
@@ -92,25 +92,25 @@
         <div class="education">
             <div>
                 <div>
-                    <h2 class="point">Education</h2>
-                    <p>All my life I have been driven by my strong belief that education is important. I try to learn something new every single day. Despite if it is about computer science or it is something else.</p>
+                    <h2 class="point" data-translate="education">Education</h2>
+                    <p data-translate="educationParagraph">All my life I have been driven by my strong belief that education is important. I try to learn something new every single day. Despite if it is about computer science or it is something else.</p>
                 </div>
                 <div class="establishments">
                     <div>
                         <h3>2014-2017</h3>
-                        <p>Ukrainian Physical and Mathematical Lyceum by Shevchenko</p>
+                        <p data-translate="educationLyceum">Ukrainian Physical and Mathematical Lyceum by Shevchenko</p>
                     </div>
                     <div>
                         <h3>2017-2019</h3>
-                        <p>KNU by Shevchenko, faculty: Computer Science</p>
+                        <p data-translate="educationShevchenko">KNU by Shevchenko, faculty: Computer Science</p>
                     </div>
                     <div>
                         <h3>2019</h3>
-                        <p>Frontend Developer Course in prog.kiev.ua</p>
+                        <p data-translate="educationCourse">Frontend Developer Course in prog.kiev.ua</p>
                     </div>
                     <div>
-                        <h3>since 2019</h3>
-                        <p>Borys Grinchenko Kyiv University, faculty: English Philology</p>
+                        <h3 data-translate="year">since 2019</h3>
+                        <p data-translate="educationGrinchenko">Borys Grinchenko Kyiv University, faculty: English Philology</p>
                     </div>
                 </div>
             </div>
@@ -119,84 +119,75 @@
     </div>
     <div class="line section" id="portfolio">
         <div class="portfolio">
-            <h2 class="point">Portfolio</h2>
+            <h2 class="point" data-translate="portfolio">Portfolio</h2>
             <ul class="filters">
-                <li class="filter active" data-sign="all">All projects</li>
-                <li class="filter" data-sign="sites">Web sites</li>
+                <li class="filter active" data-sign="all" data-translate="allProjects">All projects</li>
+                <li class="filter" data-sign="sites" data-translate="webSites">Web sites</li>
                 <li class="filter" data-sign="js">Frontend</li>
             </ul>
             <div class="projects">
                 <div class="project" data-sign="js">
                     <a href="https://bodya13.github.io/slider/" target="_blank">
                         <div class="container"><div style="background-image: url(img/1.PNG);"></div></div>
-                        <h4>Slider Four Seasons</h4>
-                        <p></p>
+                        <h4 data-translate="projectTitle1">Slider Four Seasons</h4>
                     </a>
-                    <a href="https://github.com/Bodya13/slider" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/slider" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
                 <div class="project" data-sign="js">
                     <a href="https://bodya13.github.io/drag-and-drop/" target="_blank">
                         <div class="container"><div style="background-image: url(img/2b.PNG);"></div></div>
                         <h4>Drag & Drop</h4>
-                        <p></p>
                     </a>
-                    <a href="https://github.com/Bodya13/drag-and-drop" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/drag-and-drop" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
                 <div class="project" data-sign="js">
                     <a href="https://bodya13.github.io/cards-sources/" target="_blank">
                         <div class="container"><div style="background-image: url(img/3a.PNG);"></div></div>
-                        <h4>Slider Animals</h4>
-                        <p></p>
+                        <h4 data-translate="projectTitle2">Slider Animals</h4>
                     </a>
-                    <a href="https://github.com/Bodya13/cards-sources" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/cards-sources" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
                 <div class="project" data-sign="js">
                     <a href="https://bodya13.github.io/board/" target="_blank">
                         <div class="container"><div style="background-image: url(img/4a.PNG);"></div></div>
                         <h4>Colorful Board</h4>
-                        <p></p>
                     </a>
-                    <a href="https://github.com/Bodya13/board" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/board" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
                 <div class="project" data-sign="js">
                     <a href="https://bodya13.github.io/aim-training/" target="_blank">
                         <div class="container"><div style="background-image: url(img/5.PNG);"></div></div>
-                        <h4>The Game Aim Training</h4>
-                        <p></p>
+                        <h4 data-translate="projectTitle3">The Game Aim Training</h4>
                     </a>
-                    <a href="https://github.com/Bodya13/aim-training" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/aim-training" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
                 <div class="project" data-sign="sites">
                     <a href="https://bodya13.github.io/empower-your-business/" target="_blank">
                         <div class="container"><div style="background-image: url(img/6a.PNG);"></div></div>
-                        <h4>Web Site Empower Your Business</h4>
-                        <p></p>
+                        <h4 data-translate="projectTitle4">Web Site Empower Your Business</h4>
                     </a>
-                    <a href="https://github.com/Bodya13/empower-your-business" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/empower-your-business" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
                 <div class="project" data-sign="sites">
                     <a href="https://bodya13.github.io/coffee/" target="_blank">
                         <div class="container"><div style="background-image: url(img/7a.PNG);"></div></div>
-                        <h4>Web Site Your Personalized Coffee</h4>
-                        <p></p>
+                        <h4 data-translate="projectTitle5">Web Site Your Personalized Coffee</h4>
                     </a>
-                    <a href="https://github.com/Bodya13/coffee" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/coffee" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
                 <div class="project" data-sign="js">
                     <a href="https://bodya13.github.io/to-do-list/" target="_blank">
                         <div class="container"><div style="background-image: url(img/8b.PNG);"></div></div>
                         <h4>To Do List</h4>
-                        <p></p>
                     </a>
-                    <a href="https://github.com/Bodya13/to-do-list" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/to-do-list" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
                 <div class="project" data-sign="sites">
                     <a href="https://bodya13.github.io/Project-Cleaning-/" target="_blank">
                         <div class="container"><div style="background-image: url(img/9.PNG);"></div></div>
-                        <h4>Web Site Cleaning</h4>
-                        <p></p>
+                        <h4 data-translate="projectTitle6">Web Site Cleaning</h4>
                     </a>
-                    <a href="https://github.com/Bodya13/Project-Cleaning-" target="_blank">Go to GitHub</a>
+                    <a href="https://github.com/Bodya13/Project-Cleaning-" target="_blank" data-translate="goToGitHub">Go to GitHub</a>
                 </div>
             </div>
         </div>
@@ -205,13 +196,13 @@
         <div class="contact">
             <div>
                 <div>
-                    <h2 class="point">Contact Me</h2>
-                    <p>Are you working on something great? I would love to help make it happen! Drop me a letter!</p>
+                    <h2 class="point" data-translate="contact">Contact Me</h2>
+                    <p data-translate="contactPargraph">Are you working on something great? I would love to help make it happen! Drop me a letter!</p>
                 </div>
                 <div class="info">
                     <ul class="names">
-                        <li>Phone</li>
-                        <li>Email</li>
+                        <li data-translate="phone">Phone</li>
+                        <li data-translate="email">Email</li>
                     </ul>
                     <ul class="values">
                         <li><a href="tel:+380664036411">+38 (066) 40-36-411</a></li>
@@ -224,6 +215,6 @@
     </div>
     <div class="copyright">Copyright <span id="fullYear"></span> Bohdana</div>
 
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>

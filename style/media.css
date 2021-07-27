@@ -1,6 +1,9 @@
-@media all and (max-width: 1150px) {
+@media all and (max-width: 1160px) {
   .container div {
     height: 200px !important;
+  }
+  header .nav li {
+    margin-right: 25px;
   }
 }
 
@@ -11,7 +14,7 @@
   .projects .project {
     width: 45%;
   }
-  .nav {
+  header .nav {
     display: none !important;
   }
   .sidebar {
@@ -24,7 +27,7 @@
   }
 }
 
-@media all and (max-width: 750px) {
+@media all and (max-width: 770px) {
   .hello, .skills, .education, .portfolio, .contact {
     padding: 55px 30px 30px 30px !important;
   }
@@ -111,12 +114,59 @@
   }
 }
 
-@media all and (max-width: 350px) {
+@media all and (max-width: 360px) {
   * {
     font-size: 14px;
   }
   .project .container div {
     height: 150px !important;
+  }
+  header .languages {
+    margin-right: 15px !important;
+  }
+}
+
+@media all and (max-width: 360px) and (max-width: 770px) {
+  .hello, .skills, .education, .portfolio, .contact {
+    padding: 55px 15px 30px 15px !important;
+  }
+  .hello {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .skills > div:first-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .skills > div:first-child div:first-child {
+    margin-right: 0 !important;
+  }
+  .skills > div:first-child div:nth-child(n + 2) {
+    margin-left: 0;
+  }
+  .education > div:first-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact > div:first-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mark {
+    margin-left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 /*# sourceMappingURL=media.css.map */

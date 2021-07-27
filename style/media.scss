@@ -1,6 +1,9 @@
-@media all and (max-width: 1150px) {
+@media all and (max-width: 1160px) {
     .container div {
         height: 200px !important;
+    }
+    header .nav li{
+        margin-right: 25px;
     }
 }
 
@@ -12,7 +15,7 @@
         }
     }
 
-    .nav {
+    header .nav {
         display: none !important;
     }
 
@@ -24,7 +27,7 @@
     }
 }
 
-@media all and (max-width: 750px) {
+@media all and (max-width: 770px) {
     %content {
         padding: 55px 30px 30px 30px !important;
     }
@@ -116,11 +119,21 @@
     }
 }
 
-@media all and (max-width: 350px) {
+@media all and (max-width: 360px) {
     * {
         font-size: 14px;
     }
     .project .container div {
         height: 150px !important;
+    }
+    header .languages {
+        margin-right: 15px !important;
+    }
+    %content {
+        padding: 55px 15px 30px 15px !important;
+    }
+
+    .hello, .skills, .education, .portfolio, .contact {
+        @extend %content;
     }
 }
