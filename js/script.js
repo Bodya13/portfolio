@@ -1,5 +1,3 @@
-
-
 let filters = document.querySelectorAll('.filter');
 let projects = Array.from(document.querySelectorAll('.project'));
 
@@ -48,14 +46,8 @@ function scrollto(event) {
     }
 }
 
-// let windowPageYOffset = 0;
-
 nav.addEventListener('click', event => {
     scrollto(event);
-    // windowPageYOffset = window.pageYOffset;
-    // if (value != null && windowPageYOffset != document.querySelector(`#${value}`).offsetTop) {
-    //     setTimeout(scroll, 50, value);
-    // }
 })
 
 navbar.addEventListener('click', event => {
@@ -66,15 +58,6 @@ navbar.addEventListener('click', event => {
         zIndex.classList.toggle('changeIndex')
     }
 })
-
-// function scroll(value) {
-//     if (windowPageYOffset < document.querySelector(`#${value}`).offsetTop) {
-//         window.scrollBy(0, document.querySelector(`#${value}`).offsetTop - windowPageYOffset)
-//     } else if (windowPageYOffset > document.querySelector(`#${value}`).offsetTop) {
-//         window.scrollBy(0, -(windowPageYOffset - document.querySelector(`#${value}`).offsetTop))
-//     }
-// }
-
 
 
 let sections = document.querySelectorAll('.section');
@@ -139,43 +122,33 @@ navBtnClose.addEventListener ('click', () => {
 import dictionary from './language.js';
 
 let langBtns = document.querySelector('.languages');
-let alltags = Array.from(document.querySelectorAll('*')); 
 
-console.log(localStorage);
-
-if(localStorage.length != 0) {
+if(localStorage.getItem('myLanguage')) {
     let userLanguage = localStorage.getItem('myLanguage');
+
     langBtns.querySelectorAll('button').forEach (e => {
         if (e.id === userLanguage) {
             e.classList.remove('dark')
         } else e.classList.add('dark')
     });
-
-    let necessaryDictionary = dictionary[`${userLanguage}`];
-    langChangeTo (necessaryDictionary);
+    
+    langChangeTo (dictionary[userLanguage]);
 }
 
 
 langBtns.addEventListener ('click', event => {
     langBtns.querySelectorAll('button').forEach (e => e.classList.add('dark'));
     event.target.classList.remove('dark');
-    if (event.target.id === 'EN') {
-        let necessaryDictionary = dictionary.EN;
-        langChangeTo (necessaryDictionary);
-        localStorage.setItem('myLanguage','EN');
-    } else if (event.target.id === 'UA') {
-        let necessaryDictionary = dictionary.UA;
-        langChangeTo (necessaryDictionary);
-        localStorage.setItem('myLanguage','UA');
-    }
+    langChangeTo (dictionary[event.target.id]);
+    localStorage.setItem('myLanguage', event.target.id);
 })
 
 function langChangeTo (necessaryDictionary) {
     for (const property in necessaryDictionary) {
-        alltags.forEach (e => {
-            if (e.getAttribute('data-translate') === `${property}`) {
-                e.innerHTML = necessaryDictionary[`${property}`];
-            };
+        Array.from(document.querySelectorAll(`[data-translate = "${property}"]`)).forEach(e => {
+            e.innerHTML = necessaryDictionary[`${property}`];
         })
     }
 }
+
+
